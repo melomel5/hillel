@@ -14,6 +14,7 @@ public class Main {
         char charSample = 'A';
         boolean booleanSample = false;
 
+        //creating two strings
         String stringSampleFirstWay = "some text";
         String stringSampleSecondWay = new String("another text");
 
