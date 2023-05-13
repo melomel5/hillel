@@ -64,30 +64,49 @@ public class Main {
         System.out.println("boolean operation #1, #2: it is impossible to perform arithmetic operations with boolean");
 
         //logic operation
-        System.out.println(byteSample + " > " + intSample + " : " + (byteSample > intSample));
-        System.out.println(shortSample + " > " + byteSample + " : " + (shortSample > byteSample));
+        int x = 5;
+        int y = 10;
+        int z = 15;
 
-        System.out.println(byteSample + " < " + intSample + " : " + (byteSample < intSample));
-        System.out.println(shortSample + " < " + byteSample + " : " + (shortSample < byteSample));
+        if (x < y && y < z) {
+            System.out.println("x is smallest number");
+        }
 
-        System.out.println(byteSample + " <= " + intSample + " : " + (byteSample <= intSample));
-        System.out.println(shortSample + " <= " + byteSample + " : " + (shortSample <= byteSample));
+        boolean isSunny = true;
+        boolean isRaining = false;
 
-        System.out.println(byteSample + " >= " + intSample + " : " + (byteSample >= intSample));
-        System.out.println(shortSample + " >= " + byteSample + " : " + (shortSample >= byteSample));
+        if (!isSunny) {
+            System.out.println("Today is cloudy");
+        }
+        if (isSunny ^ isRaining) {
+            System.out.println("Today is sunny or rainy but not at the same time");
+        }
+        if (isSunny & !isRaining) {
+            System.out.println("Today is sunny but not rainy");
+        }
+        if (isSunny == isRaining) {
+            System.out.println("Check the rainbow");
+        }
 
-        System.out.println(byteSample + " == " + intSample + " : " + (byteSample == intSample));
-        System.out.println(shortSample + " == " + byteSample + " : " + (shortSample == byteSample));
+        int age = 70;
 
-        System.out.println(byteSample + " != " + intSample + " : " + (byteSample != intSample));
-        System.out.println(shortSample + " != " + byteSample + " : " + (shortSample != byteSample));
+        if (age >= 65) {
+            System.out.println("You are retired");
+        }
+        if (age <= 17 && age > 0) {
+            System.out.println("You are not an adult");
+        }
+        if (age < 0 || age > 120) {
+            System.out.println("Something went wrong");
+        }
 
-        System.out.println("true & false: " + (true & false));
-        System.out.println("true | false: " + (true | false));
-        System.out.println("true ^ false: " + (true ^ false));
-        System.out.println("true || false: " + (true || false));
-        System.out.println("true && false: " + (true && false));
-        System.out.println("!false: " + (!false));
+        int a = 10;
+        int b = 20;
+        int c = 30;
+
+        if ((a > b && a > c) | (a < b & a < c)) {
+            System.out.println("a - largest or smallest number");
+        }
 
         //ternary conditional operator #1
         int maxNumber;
