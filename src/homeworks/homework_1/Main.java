@@ -1,7 +1,5 @@
 package homeworks.homework_1;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.util.Random;
 
 public class Main {
@@ -67,22 +65,22 @@ public class Main {
 
         //logic operation
         System.out.println(byteSample + " > " + intSample + " : " + (byteSample > intSample));
-        System.out.println(shortSample+ " > " + byteSample + " : " + (shortSample > byteSample));
+        System.out.println(shortSample + " > " + byteSample + " : " + (shortSample > byteSample));
 
         System.out.println(byteSample + " < " + intSample + " : " + (byteSample < intSample));
-        System.out.println(shortSample+ " < " + byteSample + " : " + (shortSample < byteSample));
+        System.out.println(shortSample + " < " + byteSample + " : " + (shortSample < byteSample));
 
         System.out.println(byteSample + " <= " + intSample + " : " + (byteSample <= intSample));
-        System.out.println(shortSample+ " <= " + byteSample + " : " + (shortSample <= byteSample));
+        System.out.println(shortSample + " <= " + byteSample + " : " + (shortSample <= byteSample));
 
         System.out.println(byteSample + " >= " + intSample + " : " + (byteSample >= intSample));
-        System.out.println(shortSample+ " >= " + byteSample + " : " + (shortSample >= byteSample));
+        System.out.println(shortSample + " >= " + byteSample + " : " + (shortSample >= byteSample));
 
         System.out.println(byteSample + " == " + intSample + " : " + (byteSample == intSample));
-        System.out.println(shortSample+ " == " + byteSample + " : " + (shortSample == byteSample));
+        System.out.println(shortSample + " == " + byteSample + " : " + (shortSample == byteSample));
 
         System.out.println(byteSample + " != " + intSample + " : " + (byteSample != intSample));
-        System.out.println(shortSample+ " != " + byteSample + " : " + (shortSample != byteSample));
+        System.out.println(shortSample + " != " + byteSample + " : " + (shortSample != byteSample));
 
         System.out.println("true & false: " + (true & false));
         System.out.println("true | false: " + (true | false));
@@ -128,5 +126,4 @@ public class Main {
             }
         }
     }
-
 }
