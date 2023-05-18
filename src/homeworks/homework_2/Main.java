@@ -6,6 +6,7 @@ import java.lang.reflect.Method;
 public class Main {
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
 
+        //SameName task
         homeworks.homework_2.class_1.SameName sameName1 = new homeworks.homework_2.class_1.SameName();
         System.out.println(sameName1.getClass());
         sameName1.info();
@@ -14,6 +15,7 @@ public class Main {
         System.out.println(sameName2.getClass());
         sameName2.info();
 
+        //Employee task
         Employee serhii = new Employee("Serhii", "Nikolaiev", "Mikhailovich", "Java developer", "email@email.com", "+380930000000", 32, 100000.00);
         System.out.println(serhii);
 
@@ -23,10 +25,10 @@ public class Main {
         Employee john = new Employee("John", "Doe", "-", "CEO", 1000000.00);
         System.out.println(john);
 
+        //Car task
         Car hyundai = new Car();
         hyundai.start();
 
-        //reflection
         //private method startElectricity
         Method startElectricityMethod = Car.class.getDeclaredMethod("startElectricity");
         startElectricityMethod.setAccessible(true);
