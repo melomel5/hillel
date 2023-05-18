@@ -1,7 +1,6 @@
 package homeworks.homework_2;
 
 public class Car {
-
     public void start() {
         startElectricity();
         startCommand();
