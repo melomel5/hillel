@@ -123,13 +123,13 @@ public class Main {
 
         //increment and decrement task
         byte count = 1;
-        System.out.println(count);
-        System.out.println(count);
+        System.out.println(count++);
+        System.out.println(--count);
         System.out.println(count--);
         System.out.println(count++);
         System.out.println(++count);
         System.out.println(--count);
-        System.out.println(count);
+        System.out.println(count--);
 
         //array task
         int[] myArray = new int[10];
