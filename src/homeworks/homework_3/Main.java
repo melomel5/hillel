@@ -45,7 +45,10 @@ public class Main {
         vw.start();
         vw.calculateFuelConsumption();
         vw.brake();
+        vw.openTrunk();
+        vw.closeTrunk();
         vw.stop();
+        vw.openDoor();
 
         Vehicle oldCar = new SUV("VW", 1985, 3, "diesel", true);
         oldCar.start();
