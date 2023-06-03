@@ -50,7 +50,7 @@ public class Main {
 
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
-        int randomWordIndex = random.nextInt(words.length - 1);
+        int randomWordIndex = random.nextInt(words.length);
 
         System.out.println("Computer word is: " + words[randomWordIndex]);
         String computerWord = words[randomWordIndex];
