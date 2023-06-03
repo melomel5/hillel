@@ -68,16 +68,22 @@ public class Main {
                 System.out.printf("Wrong answer! Your word is: %s\n", userWord);
                 int limit = Math.min(computerWord.length(), userWord.length());
 
-                StringBuilder hiddenWord = new StringBuilder("###############");
+                StringBuilder hiddenWord = new StringBuilder();
 
                 for (int i = 0; i < limit; i++) {
                     char computerChar = computerWord.charAt(i);
                     char userChar = userWord.charAt(i);
 
                     if (computerChar == userChar) {
-                        hiddenWord.setCharAt(i, computerChar);
+                        hiddenWord.append(computerChar);
+                    } else {
+                        hiddenWord.append("#");
                     }
                 }
+                int fixedHiddenWordLength = 15;
+                int remainingLength = fixedHiddenWordLength - hiddenWord.length();
+                hiddenWord.append("#".repeat(remainingLength));
+
                 System.out.printf("The secret word is: %s \n", hiddenWord);
             }
         }
