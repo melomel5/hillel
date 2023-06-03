@@ -26,7 +26,6 @@ public class Main {
                 count++;
             }
         }
-
         return count;
     }
 
@@ -85,5 +84,4 @@ public class Main {
             }
         }
     }
-
 }
