@@ -51,16 +51,14 @@ public class Main {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
         int randomWordIndex = random.nextInt(words.length);
-
-        System.out.println("Computer word is: " + words[randomWordIndex]);
-        String computerWord = words[randomWordIndex];
+        String computerWord = words[randomWordIndex].strip();
 
         boolean result = false;
 
         while (!result) {
             System.out.println("Enter any word: ");
 
-            String userWord = scanner.nextLine();
+            String userWord = scanner.nextLine().toLowerCase().strip();
 
             if (userWord.equalsIgnoreCase(computerWord)) {
                 System.out.printf("Correct answer! The secret word is: %s\nThe user word is: %s\n", computerWord,
