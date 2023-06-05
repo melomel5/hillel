@@ -16,6 +16,8 @@ public class Main {
         System.out.println(isPalindrome("ERE"));
         System.out.println(isPalindrome("Allo"));
 
+        System.out.println(isPalindrome("Borrow or rob"));
+
         guessTheWord();
     }
 
@@ -40,7 +42,10 @@ public class Main {
     }
 
     private static Boolean isPalindrome(String str) {
-        return str.equalsIgnoreCase(stringReverse(str));
+        //extract characters from the input string
+        String tempString = str.replaceAll("[^a-zA-Z]", "").replaceAll("\\s", "");
+
+        return tempString.equalsIgnoreCase(stringReverse(tempString));
     }
 
     private static void guessTheWord() {
