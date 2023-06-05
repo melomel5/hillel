@@ -15,7 +15,6 @@ public class Main {
 
         System.out.println(isPalindrome("ERE"));
         System.out.println(isPalindrome("Allo"));
-
         System.out.println(isPalindrome("Borrow or rob"));
 
         guessTheWord();
