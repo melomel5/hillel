@@ -1,4 +1,4 @@
-package homeworks.homework_3.vehicle.model;
+package homeworks.homework_3.vehicle.type;
 
 import homeworks.homework_3.vehicle.Car;
 
