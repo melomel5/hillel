@@ -20,9 +20,9 @@ public class Main {
             System.out.println(result);
         } catch (ArraySizeException e) {
             System.out.println("Unexpected array size. " + e.getMessage());
-            e.printStackTrace();
             System.out.println("Actual array size: " + e.getActualRows() + "x" + e.getActualColumns());
             System.out.println("Expected array size: " + e.getExpectedRows() + "x" + e.getExpectedColumns());
+            e.printStackTrace();
         } catch (ArrayDataException e) {
             System.out.println("Unexpected data in array. " + e.getMessage());
             e.printStackTrace();
