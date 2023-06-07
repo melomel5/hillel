@@ -10,8 +10,11 @@ public class ArrayValueCalculator {
     int doCalc(String[][] array) throws ArraySizeException, ArrayDataException {
         int expectedRows = 4;
         int expectedColumns = 4;
-        if (array.length != expectedRows || array[0].length != expectedColumns) {
-            throw new ArraySizeException("Wrong array size. Array must be 4x4.", array.length, array[0].length,
+        int actualRows = array.length;
+        int actualColumns = array[0].length;
+        
+        if (actualRows != expectedRows || actualColumns != expectedColumns) {
+            throw new ArraySizeException("Wrong array size. Array must be 4x4.", actualRows, actualColumns,
                     expectedRows, expectedColumns);
         }
 
