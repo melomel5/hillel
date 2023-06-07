@@ -5,9 +5,9 @@ import homeworks.homework_3.device.device_type.Laptop;
 import homeworks.homework_3.device.device_type.MobilePhone;
 import homeworks.homework_3.device.device_type.Tablet;
 import homeworks.homework_3.vehicle.Vehicle;
-import homeworks.homework_3.vehicle.model.SUV;
-import homeworks.homework_3.vehicle.model.Sedan;
-import homeworks.homework_3.vehicle.model.SportsCar;
+import homeworks.homework_3.vehicle.type.SUV;
+import homeworks.homework_3.vehicle.type.Sedan;
+import homeworks.homework_3.vehicle.type.SportsCar;
 
 public class Main {
     public static void main(String[] args) {
