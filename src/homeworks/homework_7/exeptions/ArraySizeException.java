@@ -6,7 +6,8 @@ public class ArraySizeException extends Exception {
     private int expectedRows;
     private int expectedColumns;
 
-    public ArraySizeException(String message, int actualRows, int actualColumns, int expectedRows, int expectedColumns) {
+    public ArraySizeException(String message, int actualRows, int actualColumns, int expectedRows,
+            int expectedColumns) {
         super(message);
         this.actualRows = actualRows;
         this.actualColumns = actualColumns;
