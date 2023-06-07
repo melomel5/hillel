@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println(findSymbolOccurrence("Odesa", 's'));
+        System.out.println(findSymbolOccurrence("Serhii", 'i'));
 
         System.out.println(findWordPosition("Apollo", "pollo"));
         System.out.println(findWordPosition("Apple", "Plant"));
