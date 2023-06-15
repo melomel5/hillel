@@ -25,13 +25,14 @@ public class Main {
         int folderNumber = 8;
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+            Path currentPath = BASE_PATH;
             for (int i = 1; i <= folderNumber; i++) {
-                Path folderPath = BASE_PATH.resolve("folder_" + i);
-                Files.createDirectories(folderPath);
+                currentPath = currentPath.resolve("folder_" + i);
+                Files.createDirectories(currentPath);
                 if (i % 2 == 0) {
-                    Path filePath = folderPath.resolve("file_of_folder_" + i);
+                    Path filePath = currentPath.resolve("file_of_folder_" + i);
 
-                    System.out.printf("Input content of file %s :\n", folderPath);
+                    System.out.printf("Input content of file %s :\n", currentPath);
                     String content = reader.readLine();
 
                     try (FileWriter writer = new FileWriter(filePath.toString())) {
