@@ -11,23 +11,22 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class Main {
-    static Path basePath = Paths.get("src/main/resources/homework_8");
+    private static final Path BASE_PATH = Paths.get("src/main/resources/homework_8");
 
     public static void main(String[] args) {
 
-//        deleteFileFolder(basePath);
+        deleteFileFolder(BASE_PATH);
         createFolders();
-//        printPathTreeAndFileContent(basePath);
+        printFilesPathAndContent(BASE_PATH);
     }
 
     private static void createFolders() {
 
         int folderNumber = 8;
-//        int folderDepth = 0;
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             for (int i = 1; i <= folderNumber; i++) {
-                Path folderPath = basePath.resolve("folder_" + i);
+                Path folderPath = BASE_PATH.resolve("folder_" + i);
                 Files.createDirectories(folderPath);
                 if (i % 2 == 0) {
                     Path filePath = folderPath.resolve("file_of_folder_" + i);
@@ -59,26 +58,17 @@ public class Main {
         }
     }
 
-    private static void printPathTreeAndFileContentIo(Path folderPath) {
-        // using java io
-        File element = new File(folderPath.toString());
-        File[] paths = element.listFiles();
-
-        for (File path : paths) {
-            if (path.isDirectory()) {
-                printPathTreeAndFileContentIo(path.toPath());
-            } else {
-                System.out.printf("File path: '%s'\nFile '%s' content:\n%s\n\n", path, path.getName(),
-                        getFileContent(path.toPath()));
-            }
+    private static void printFilesPathAndContent(Path folderPath) {
+        try {
+            Files.walk(folderPath)
+                    .filter(Files::isRegularFile)
+                    .forEach(file -> {
+                        System.out.printf("File path:\n%s\n", file);
+                        System.out.printf("File content:\n%s\n\n", getFileContent(file));
+                    });
+        } catch (IOException e) {
+            System.err.println("Error traversing directory: " + folderPath + " - " + e.getMessage());
         }
-    }
-
-    private static void printPathTreeAndFileContentNio(Path folderPath) throws IOException {
-        // using java nio
-        Files.walk(folderPath)
-                .filter(Files::isRegularFile)
-                .forEach(System.out::println);
     }
 
     private static String getFileContent(Path path) {
