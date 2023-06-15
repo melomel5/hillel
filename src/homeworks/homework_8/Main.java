@@ -2,13 +2,12 @@ package homeworks.homework_8;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 
 public class Main {
     private static final Path BASE_PATH = Paths.get("src/main/resources/homework_8");
@@ -35,9 +34,7 @@ public class Main {
                     System.out.printf("Input content of file %s :\n", currentPath);
                     String content = reader.readLine();
 
-                    try (FileWriter writer = new FileWriter(filePath.toString())) {
-                        writer.write(content);
-                    }
+                    Files.write(filePath, content.getBytes());
                 }
             }
         } catch (IOException e) {
@@ -73,17 +70,13 @@ public class Main {
     }
 
     private static String getFileContent(Path path) {
-        StringBuilder content = new StringBuilder();
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(path.toFile()))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                content.append(line).append(System.lineSeparator());
-            }
+        try {
+            List<String> lines = Files.readAllLines(path);
+            return String.join(System.lineSeparator(), lines);
         } catch (IOException e) {
             System.err.println("Reading file error: " + path + " - " + e.getMessage());
+            return "";
         }
-        return content.toString();
     }
 
 }
