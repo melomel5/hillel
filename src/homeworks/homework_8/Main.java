@@ -12,13 +12,11 @@ public class Main {
     private static final Path BASE_PATH = Paths.get("src/main/resources/homework_8");
 
     public static void main(String[] args) {
-
         createFolders();
         printFilesPathAndContent(BASE_PATH);
     }
 
     private static void createFolders() {
-
         int folderNumber = 8;
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
@@ -37,6 +35,7 @@ public class Main {
             }
         } catch (IOException e) {
             System.err.println("Failed to create directory or file!" + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -50,6 +49,7 @@ public class Main {
                     });
         } catch (IOException e) {
             System.err.println("Error traversing directory: " + folderPath + " - " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -59,6 +59,7 @@ public class Main {
             return String.join(System.lineSeparator(), lines);
         } catch (IOException e) {
             System.err.println("Reading file error: " + path + " - " + e.getMessage());
+            e.printStackTrace();
             return "";
         }
     }
