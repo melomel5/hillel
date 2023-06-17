@@ -1,7 +1,6 @@
 package homeworks.homework_8;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
@@ -14,7 +13,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        deleteFileFolder(BASE_PATH);
         createFolders();
         printFilesPathAndContent(BASE_PATH);
     }
@@ -42,20 +40,6 @@ public class Main {
         }
     }
 
-    private static void deleteFileFolder(Path path) {
-        if (path.toFile().isDirectory()) {
-            File[] files = path.toFile().listFiles();
-            if (files != null) {
-                for (File file : files) {
-                    deleteFileFolder(file.toPath());
-                }
-            }
-        }
-        if (!path.toFile().delete()) {
-            System.out.println("Deleting error: " + path.toFile().getAbsolutePath());
-        }
-    }
-
     private static void printFilesPathAndContent(Path folderPath) {
         try {
             Files.walk(folderPath)
@@ -78,5 +62,4 @@ public class Main {
             return "";
         }
     }
-
 }
