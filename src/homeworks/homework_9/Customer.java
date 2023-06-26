@@ -54,6 +54,7 @@ public class Customer {
     }
 
     public void showOrder() {
+        System.out.println("Your order:");
         for (Dish orderElement : order) {
             System.out.println(orderElement.getName());
         }

@@ -6,6 +6,6 @@ public class HotKitchenChef extends Staff implements Cook {
 
     @Override
     public void cook(String dishName) {
-        System.out.println("Hot Kitchen Chef is cooking" + dishName);
+        System.out.println("Hot Kitchen Chef is cooking " + dishName);
     }
 }
