@@ -39,7 +39,7 @@ public class Customer {
         }
     }
 
-    public Order placeOrder() {
+    public void placeOrder() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input the number of dishes you want to order:");
         int quantity = scanner.nextInt();
@@ -60,7 +60,6 @@ public class Customer {
         }
 
         scanner.close();
-        return order;
     }
 
     public void showOrder() {
