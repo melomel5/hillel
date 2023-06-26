@@ -1,7 +1,6 @@
 package homeworks.homework_9.kitchen;
 
-import java.util.List;
-
+import homeworks.homework_9.Order;
 import homeworks.homework_9.menu.Dish;
 import homeworks.homework_9.staff.interfaces.Cook;
 
@@ -37,9 +36,10 @@ public class Kitchen {
         }
     }
 
-    public void prepareOrder(List<Dish> order) {
-        for (Dish dish : order) {
+    public void prepareOrder(Order order) {
+        for (Dish dish : order.getDishes()) {
             prepareDish(dish);
         }
+        order.setReady(true);
     }
 }

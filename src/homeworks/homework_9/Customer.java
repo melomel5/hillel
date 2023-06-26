@@ -1,6 +1,5 @@
 package homeworks.homework_9;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -10,12 +9,17 @@ import homeworks.homework_9.menu.RestaurantMenu;
 public class Customer {
 
     private String name;
-    private List<Dish> order;
+    private Order order;
+    private Table table;
+    private Hall hall;
     private int tableNumber;
 
-    public Customer(String name) {
+    public Customer(String name, Hall hall) {
         this.name = name;
-        this.order = new ArrayList<>();
+        this.hall = hall;
+        this.tableNumber = -1;
+        this.order = new Order();
+        this.table = new Table(tableNumber);
     }
 
     public String getName() {
@@ -27,10 +31,15 @@ public class Customer {
     }
 
     public void setTableNumber(int tableNumber) {
-        this.tableNumber = tableNumber;
+        if (hall.isTableOccupied(tableNumber)) {
+            System.out.println("Impossible seat to table is #" + tableNumber);
+        } else {
+            this.tableNumber = tableNumber;
+            System.out.println("Your current table is #" + tableNumber);
+        }
     }
 
-    public void placeOrder() {
+    public Order placeOrder() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input the number of dishes you want to order:");
         int quantity = scanner.nextInt();
@@ -43,7 +52,7 @@ public class Customer {
 
             Dish dish = menu.getDishByName(dishName);
             if (dish != null) {
-                order.add(dish);
+                order.addDish(dish);
             } else {
                 System.out.println("Invalid dish name. Please try again.");
                 i--;
@@ -51,16 +60,22 @@ public class Customer {
         }
 
         scanner.close();
+        return order;
     }
 
     public void showOrder() {
         System.out.println("Your order:");
-        for (Dish orderElement : order) {
-            System.out.println(orderElement.getName());
+        List<Dish> dishes = order.getDishes();
+        for (Dish dish : dishes) {
+            System.out.println(" - " + dish.getName());
         }
     }
 
-    public List<Dish> getOrder() {
+    public Order getOrder() {
         return order;
+    }
+
+    public int getTableNumber() {
+        return table.getNumber();
     }
 }
