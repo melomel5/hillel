@@ -20,12 +20,10 @@ public class Main {
 
         Kitchen kitchen = new Kitchen(coldKitchenChef, hotKitchenChef, bartender, chef);
 
-
         Customer serhii = new Customer("Serhii");
         serhii.placeOrder();
         serhii.showOrder();
 
         kitchen.prepareOrder(serhii.getOrder());
     }
-
 }

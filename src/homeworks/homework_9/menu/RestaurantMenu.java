@@ -22,8 +22,9 @@ public class RestaurantMenu {
                 String name = dishData[0].trim();
                 double price = Double.parseDouble(dishData[1].replaceAll("[^0-9.]", ""));
                 DishType type = getDishType(dishData[2]);
+                List<String> ingredients = getIngredients(dishData);
 
-                Dish dish = new Dish(name, price, type);
+                Dish dish = new Dish(name, price, type, ingredients);
                 menu.add(dish);
             }
         } catch (IOException e) {
@@ -57,5 +58,14 @@ public class RestaurantMenu {
             System.out.println("Unknown dish type: " + typeString);
             return DishType.UNKNOWN;
         }
+    }
+
+    private List<String> getIngredients(String[] dishData) {
+        List<String> ingredients = new ArrayList<>();
+        for (int i = 3; i < dishData.length; i++) {
+            String ingredient = dishData[i].trim();
+            ingredients.add(ingredient);
+        }
+        return ingredients;
     }
 }

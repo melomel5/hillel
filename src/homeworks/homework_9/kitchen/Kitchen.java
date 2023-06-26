@@ -21,16 +21,16 @@ public class Kitchen {
     public void prepareDish(Dish dish) {
         switch (dish.getType()) {
         case COLD, DESSERT:
-            coldKitchenChef.cook(dish.getName());
+            coldKitchenChef.cook(dish.getName(), dish.getIngredients());
             break;
         case HOT:
-            hotKitchenChef.cook(dish.getName());
+            hotKitchenChef.cook(dish.getName(), dish.getIngredients());
             break;
         case BAR:
-            bartender.cook(dish.getName());
+            bartender.cook(dish.getName(), dish.getIngredients());
             break;
         case UNKNOWN:
-            chef.cook(dish.getName());
+            chef.cook(dish.getName(), dish.getIngredients());
             break;
         default:
             System.out.println("Invalid dish type.");
@@ -42,5 +42,4 @@ public class Kitchen {
             prepareDish(dish);
         }
     }
-
 }
