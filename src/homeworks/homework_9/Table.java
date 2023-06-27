@@ -14,10 +14,6 @@ public class Table {
         return number;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
     public boolean isFree() {
         return isFree;
     }

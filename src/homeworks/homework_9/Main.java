@@ -1,7 +1,5 @@
 package homeworks.homework_9;
 
-import java.io.IOException;
-
 import homeworks.homework_9.kitchen.Kitchen;
 import homeworks.homework_9.staff.Bartender;
 import homeworks.homework_9.staff.Chef;
@@ -23,7 +21,6 @@ public class Main {
         Waiter waiter = new Waiter(hall);
 
         Customer serhii = new Customer("Serhii", hall);
-        Customer andrii = new Customer("Andrii", hall);
 
         waiter.seatCustomer(serhii, 1);
 
