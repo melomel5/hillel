@@ -19,7 +19,8 @@ public class Kitchen {
 
     public void prepareDish(Dish dish) {
         switch (dish.getType()) {
-        case COLD, DESSERT:
+        case COLD:
+        case DESSERT:
             coldKitchenChef.cook(dish.getName(), dish.getIngredients());
             break;
         case HOT:
