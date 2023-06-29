@@ -1,16 +1,17 @@
     package homeworks.homework_9;
 
     import java.util.ArrayList;
-    import java.util.List;
+    import java.util.HashSet;
+    import java.util.Set;
 
     public class Hall {
 
-        private List<Table> tables;
+        private Set<Table> tables;
 
         private final int NUMBER_OF_TABLES = 10;
 
         public Hall() {
-            tables = new ArrayList<>();
+            tables = new HashSet<>();
             for (int i = 1; i <= NUMBER_OF_TABLES; i++) {
                 tables.add(new Table(i));
             }
