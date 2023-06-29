@@ -29,7 +29,7 @@
                 Table table = getTableByNumber(tableNumber);
                 if (table.isFree()) {
                     System.out.printf("Table #%d is free\n", tableNumber);
-                    customer.setTableNumber(tableNumber);
+                    customer.takeASit(tableNumber);
                     table.setFree(false);
                     return true;
                 } else {

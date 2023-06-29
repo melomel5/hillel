@@ -30,7 +30,7 @@ public class Customer {
         this.name = name;
     }
 
-    public void setTableNumber(int tableNumber) {
+    public void takeASit(int tableNumber) {
         if (hall.isTableOccupied(tableNumber)) {
             System.out.println("Impossible seat to table is #" + tableNumber);
         } else {
