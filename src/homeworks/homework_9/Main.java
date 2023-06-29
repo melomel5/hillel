@@ -18,7 +18,9 @@ public class Main {
         Kitchen kitchen = new Kitchen(coldKitchenChef, hotKitchenChef, bartender, chef);
 
         Hall hall = new Hall();
-        Waiter waiter = new Waiter(hall);
+        Waiter waiter = new Waiter();
+        waiter.setHall(hall);
+        hall.setWaiter(waiter);
 
         Customer serhii = new Customer("Serhii", hall);
 

@@ -9,7 +9,10 @@ public class Waiter extends Staff {
 
     private Hall hall;
 
-    public Waiter(Hall hall) {
+    public Waiter() {
+    }
+
+    public void setHall(Hall hall) {
         this.hall = hall;
     }
 
