@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import homeworks.homework_9.menu.Dish;
 import homeworks.homework_9.menu.RestaurantMenu;
+import homeworks.homework_9.order.Order;
 
 public class Customer {
 

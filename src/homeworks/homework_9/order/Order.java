@@ -1,4 +1,4 @@
-package homeworks.homework_9;
+package homeworks.homework_9.order;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,11 +29,5 @@ public class Order {
 
     public List<Dish> getDishes() {
         return dishes;
-    }
-
-    public void processOrder(Kitchen kitchen) {
-        for (Dish dish : dishes) {
-            kitchen.prepareDish(dish);
-        }
     }
 }

@@ -2,7 +2,7 @@ package homeworks.homework_9.staff;
 
 import homeworks.homework_9.Customer;
 import homeworks.homework_9.Hall;
-import homeworks.homework_9.Order;
+import homeworks.homework_9.order.Order;
 import homeworks.homework_9.menu.Dish;
 
 public class Waiter extends Staff {
