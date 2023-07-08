@@ -11,18 +11,24 @@ import homeworks.homework_10.simple_tree.SimpleTree;
 public class Main {
     public static void main(String[] args) {
         int[] array = { 5, 9, 3, 1, 8, 6, 2, 7, 4 };
+        int[] originalArray = Arrays.copyOf(array, array.length); // copy of the array
 
         // Quick Sort
+        System.out.printf("Not sorted array: %s\n", Arrays.toString(array));
         quickSort(array);
-        System.out.println("Sorted array: ");
-        printArray(array);
+        System.out.printf("[Quick Sort] Sorted array: %s\n\n", Arrays.toString(array));
+        // Restore the original array
+        array = Arrays.copyOf(originalArray, originalArray.length);
 
         // Merge Sort
+        System.out.printf("Not sorted array: %s\n", Arrays.toString(array));
         mergeSort(array);
-        System.out.println("Sorted array:");
-        printArray(array);
+        System.out.printf("[Merge Sort] Sorted array: %s\n\n", Arrays.toString(array));
+        // Restore the original array
+        array = Arrays.copyOf(originalArray, originalArray.length);
 
         // Binary Search
+        System.out.printf("Array: %s\n", Arrays.toString(array));
         int target = 7;
         binarySearch(array, target);
 
@@ -45,9 +51,5 @@ public class Main {
         System.out.println("Breadth First Traversal:");
         tree.traverseBreadthFirst();
         System.out.println();
-    }
-
-    public static void printArray(int[] arr) {
-        System.out.println(Arrays.toString(arr));
     }
 }

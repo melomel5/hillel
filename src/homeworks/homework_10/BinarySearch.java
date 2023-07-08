@@ -10,7 +10,7 @@ public class BinarySearch {
             int mid = left + (right - left) / 2;
 
             if (arr[mid] == target) {
-                System.out.println("Element index is: " + mid);
+                System.out.printf("Element index is: %d\n", mid);
                 return;
             }
 
@@ -21,6 +21,6 @@ public class BinarySearch {
                 right = mid - 1;
         }
 
-        System.out.println("Element not found");
+        System.out.printf("Element %d not found\n", target);
     }
 }
