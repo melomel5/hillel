@@ -3,16 +3,23 @@ package homeworks.homework_10;
 import java.util.Random;
 
 public class QuickSort {
+    public static void quickSort(int[] array) {
+        int low = 0;
+        int high = array.length - 1;
+        quickSort(array, low, high);
+    }
 
-    public static void quickSort(int[] array, int low, int high) {
+    private static void quickSort(int[] array, int low, int high) {
         if (low < high) {
             int partitionIndex = partition(array, low, high);
             quickSort(array, low, partitionIndex - 1);
             quickSort(array, partitionIndex + 1, high);
+        } else {
+            System.out.println("Array is empty");
         }
     }
 
-    public static int partition(int[] array, int low, int high) {
+    private static int partition(int[] array, int low, int high) {
         // select random pivot
         Random random = new Random();
         int randomIndex = random.nextInt(high - low + 1) + low;
@@ -30,7 +37,7 @@ public class QuickSort {
         return i + 1;
     }
 
-    public static void swap(int[] array, int i, int j) {
+    private static void swap(int[] array, int i, int j) {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;

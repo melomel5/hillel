@@ -13,7 +13,7 @@ public class Main {
         int[] array = { 5, 9, 3, 1, 8, 6, 2, 7, 4 };
 
         // Quick Sort
-        quickSort(array, 0, array.length - 1);
+        quickSort(array);
         System.out.println("Sorted array: ");
         printArray(array);
 
