@@ -18,7 +18,7 @@ public class Main {
         printArray(array);
 
         // Merge Sort
-        mergeSort(array, 0, array.length - 1);
+        mergeSort(array);
         System.out.println("Sorted array:");
         printArray(array);
 

@@ -1,7 +1,11 @@
 package homeworks.homework_10;
 
 public class MergeSort {
-    public static void merge(int[] arr, int left, int mid, int right) {
+    public static void mergeSort(int[] arr) {
+        mergeSort(arr, 0, arr.length - 1);
+    }
+
+    private static void merge(int[] arr, int left, int mid, int right) {
         int n1 = mid - left + 1;
         int n2 = right - mid;
 
@@ -14,8 +18,8 @@ public class MergeSort {
             rightArr[j] = arr[mid + 1 + j];
 
         int i = 0, j = 0;
-
         int k = left;
+
         while (i < n1 && j < n2) {
             if (leftArr[i] <= rightArr[j]) {
                 arr[k] = leftArr[i];
@@ -40,7 +44,7 @@ public class MergeSort {
         }
     }
 
-    public static void mergeSort(int[] arr, int left, int right) {
+    private static void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
             int mid = (left + right) / 2;
 
