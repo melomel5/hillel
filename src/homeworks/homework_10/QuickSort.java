@@ -10,13 +10,9 @@ public class QuickSort {
     }
 
     private static void quickSort(int[] array, int low, int high) {
-        if (low < high) {
-            int partitionIndex = partition(array, low, high);
-            quickSort(array, low, partitionIndex - 1);
-            quickSort(array, partitionIndex + 1, high);
-        } else {
-            System.out.println("Array is empty");
-        }
+        int partitionIndex = partition(array, low, high);
+        quickSort(array, low, partitionIndex - 1);
+        quickSort(array, partitionIndex + 1, high);
     }
 
     private static int partition(int[] array, int low, int high) {
