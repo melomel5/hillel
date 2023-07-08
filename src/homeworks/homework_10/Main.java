@@ -11,24 +11,17 @@ import homeworks.homework_10.simple_tree.SimpleTree;
 public class Main {
     public static void main(String[] args) {
         int[] array = { 5, 9, 3, 1, 8, 6, 2, 7, 4 };
-        int[] originalArray = Arrays.copyOf(array, array.length); // copy of the array
+        System.out.printf("Array: %s\n", Arrays.toString(array));
 
         // Quick Sort
-        System.out.printf("Not sorted array: %s\n", Arrays.toString(array));
         quickSort(array);
-        System.out.printf("[Quick Sort] Sorted array: %s\n\n", Arrays.toString(array));
-        // Restore the original array
-        array = Arrays.copyOf(originalArray, originalArray.length);
+        System.out.printf("Quick Sort: %s\n", Arrays.toString(array));
 
         // Merge Sort
-        System.out.printf("Not sorted array: %s\n", Arrays.toString(array));
         mergeSort(array);
-        System.out.printf("[Merge Sort] Sorted array: %s\n\n", Arrays.toString(array));
-        // Restore the original array
-        array = Arrays.copyOf(originalArray, originalArray.length);
+        System.out.printf("Merge Sort: %s\n", Arrays.toString(array));
 
         // Binary Search
-        System.out.printf("Array: %s\n", Arrays.toString(array));
         int target = 7;
         binarySearch(array, target);
 
